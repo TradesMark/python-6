@@ -19,6 +19,8 @@ def fib_infinite_iterator(n):
 if __name__ == "__main__":
     n = int(input('Введите число элементов последовательности: '))
     print(f'fib_infinite_iterator({n}): \n', fib_infinite_iterator(n))
+    
+    # ТЕСТИРОВАНИЕ
 
     """
     assert n >= 0
