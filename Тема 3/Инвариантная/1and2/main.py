@@ -224,7 +224,7 @@ class CBR_API(QWidget):
         # Выполняем запрос к API с выбранными данными.
         result = self.getResult(day_value, month_value, year_value)
 
-        def json_decorator(func):
+        def decorator(func):
             """
             декоратор для конвертации в json
             """
@@ -234,7 +234,7 @@ class CBR_API(QWidget):
 
             return wrapper
 
-        class injson:
+        class inj:
 
             def __init__(self):
                 # Инициализация для JSON
@@ -259,7 +259,7 @@ class CBR_API(QWidget):
                         result[valute_id] = valute_cur_val
                 return result
 
-            @json_decorator
+            @decorator
             def get_values(self):
                 # Метод для получения всех курсов валют
                 return self.cache
@@ -281,7 +281,7 @@ class CBR_API(QWidget):
                 # Метод для получения курса валюты
                 return self.cache[code]
 
-        jsonn = injson()
+        jsonn = injs()
 
         # выводим в виде джейсон файла
         print(jsonn.get_values())
