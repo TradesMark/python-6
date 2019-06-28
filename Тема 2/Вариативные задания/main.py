@@ -20,7 +20,14 @@ if __name__ == "__main__":
     n = int(input('Введите число элементов последовательности: '))
     print(f'fib_infinite_iterator({n}): \n', fib_infinite_iterator(n))
 
-    assert  n >= 0
+    """
+    assert n >= 0
+    assert (fib_infinite_iterator(0) == 0 )
+    assert (fib_infinite_iterator(1) == None )
+    assert (fib_infinite_iterator(2) == [0, 1, 1, 2] )
+    assert (fib_infinite_iterator(5) == [0, 1, 1, 2, 3, 5, 8])
+    """
+
 
     # Результат
     # Если ввести число элементов последовательности: 15 то получим 
