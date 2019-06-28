@@ -61,5 +61,17 @@ if __name__ == "__main__":
         result.append(f.__next__())
     print('Ряд Фибоначчи (итератор v2): \n', result)
 
-    assert  n >= 0
+   
 
+    #ТЕСТы
+    """ 
+    assert  n >= 0
+    if n == 0:
+        assert (fibonacci_v1(0) == None )
+    elif n == 1:
+        assert (fibonacci_v1(1) == None)
+    elif n == 2:
+        assert (fibonacci_v1(2) == [0, 1, 1, 2])
+    elif n == 5:
+        assert (fibonacci_v1(5) == [0, 1, 1, 2, 3, 5, 8])
+    """ 
