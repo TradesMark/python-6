@@ -61,4 +61,5 @@ if __name__ == "__main__":
         result.append(f.__next__())
     print('Ряд Фибоначчи (итератор v2): \n', result)
 
+    assert  n >= 0
 
