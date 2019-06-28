@@ -69,11 +69,9 @@ if __name__ == "__main__":
     if n == 0:
         assert (fibonacci_v1(0) == None )
         assert (fibonacci_v2(0) == None)
-        assert (fibonacci_iterator(0) == [0, 1])
     elif n == 1:
         assert (fibonacci_v1(1) == None)
         assert (fibonacci_v2(1) == None)
-        assert (fibonacci_iterator(1) == [0, 1])
     elif n == 2:
         assert (fibonacci_v1(2) == [0, 1])
         assert (fibonacci_v2(2) == [0, 1])
