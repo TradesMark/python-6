@@ -1,4 +1,4 @@
-# Голосовой ассистент демка
+# Голосовой ассистент пример кода
 import os
 import time
 import speech_recognition as sr
@@ -12,8 +12,6 @@ opts = {
     "tbr": ('скажи', 'расскажи', 'покажи', 'сколько', 'произнеси'),
     "cmds": {
         "ctime": ('текущее время', 'сейчас времени', 'который час'),
-        "radio": ('включи музыку', 'воспроизведи радио', 'включи радио'),
-        "stupid1": ('расскажи анекдот', 'рассмеши меня', 'ты знаешь анекдоты')
     }
 }
 
@@ -32,7 +30,7 @@ def callback(recognizer, audio):
         print("[log] Распознано: " + voice)
 
         if voice.startswith(opts["alias"]):
-            # обращаются к Кеше
+            # обращаются к ассистенту
             cmd = voice
 
             for x in opts['alias']:
@@ -70,13 +68,6 @@ def execute_cmd(cmd):
         now = datetime.datetime.now()
         speak("Сейчас " + str(now.hour) + ":" + str(now.minute))
 
-    elif cmd == 'radio':
-        # воспроизвести радио
-        os.system("D:\\Jarvi\\res\\radio_record.m3u")
-
-    elif cmd == 'stupid1':
-        # рассказать анекдот
-        speak("Ты сам можешь посмотреть их в интернете ... Ха ха ха")
 
     else:
         print('Команда не распознана, повторите!')
@@ -95,10 +86,9 @@ speak_engine = pyttsx3.init()
 voices = speak_engine.getProperty('voices')
 speak_engine.setProperty('voice', voices[0].id)
 
-# forced cmd test speak("Мой разработчик не научил меня анекдотам ... Ха ха ха")
 
-speak("Добрый день, аники")
-speak("Джарвис слушает и готов выполнять")
+speak("Добрый день")
+speak("Джарвис слушает")
 
 stop_listening = r.listen_in_background(m, callback)
 while True: time.sleep(0.1) # бесконечно запуск
